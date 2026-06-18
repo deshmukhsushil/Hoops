@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Hoops v2.0</title>
+    <meta name="description" content="Hoops Privacy Policy. All data stays on your device. We collect nothing, transmit nothing, track nothing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #111118;
+            --bg3: #16161f;
+            --card: rgba(255,255,255,0.04);
+            --card-border: rgba(255,255,255,0.08);
+            --text: #f0f0f5;
+            --text-muted: #8888aa;
+            --accent: #5b6cf4;
+            --accent2: #8b5cf6;
+            --accent-glow: rgba(91,108,244,0.2);
+            --gradient: linear-gradient(135deg, #5b6cf4, #8b5cf6);
+        }
+        [data-theme="light"] {
+            --bg: #f5f5f7;
+            --bg2: #ffffff;
+            --bg3: #ebebf0;
+            --card: rgba(0,0,0,0.03);
+            --card-border: rgba(0,0,0,0.09);
+            --text: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent: #4f5ce0;
+            --accent2: #7c3aed;
+            --accent-glow: rgba(79,92,224,0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            height: 64px;
+            background: rgba(10,10,15,0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            transition: background 0.3s;
+        }
+        [data-theme="light"] nav { background: rgba(245,245,247,0.80); }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--text); }
+        .theme-toggle {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background: var(--card);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.2s;
+            color: var(--text);
+        }
+        .theme-toggle:hover {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        .page-header {
+            margin-bottom: 56px;
+        }
+        .page-header .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .page-header h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* TL;DR BOX */
+        .tldr {
+            background: var(--accent-glow);
+            border: 1px solid rgba(91,108,244,0.25);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+        }
+        .tldr h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tldr ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .tldr ul li {
+            display: flex;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text);
+        }
+        .tldr ul li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* CONTENT */
+        .policy-section {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .policy-section:last-of-type { border-bottom: none; }
+
+        .policy-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-num {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: var(--accent-glow);
+            border: 1px solid rgba(91,108,244,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .policy-section p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .policy-section p:last-child { margin-bottom: 0; }
+        .policy-section strong { color: var(--text); }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: var(--card);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--text);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        .data-table td:first-child { font-weight: 600; white-space: nowrap; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover td { background: var(--card); }
+
+        .perm-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .perm-item:last-child { border-bottom: none; }
+        .perm-name {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 3px 10px;
+            border-radius: 6px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .perm-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 14px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">Hoops ✦</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">← Back to Home</a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
+        </div>
+    </nav>
+
+    <div class="page">
+
+        <div class="page-header">
+            <span class="tag">Legal</span>
+            <h1>Privacy Policy</h1>
+            <p>Last updated: June 18, 2026 &nbsp;·&nbsp; Applies to Hoops v2.0</p>
+        </div>
+
+        <!-- TL;DR -->
+        <div class="tldr">
+            <h3>TL;DR — The short version</h3>
+            <ul>
+                <li>We collect zero personal data. Nothing is sent to any server.</li>
+                <li>All resume parsing, PII removal, and job scraping happens in your browser.</li>
+                <li>Everything stored lives only in your local Chrome storage.</li>
+                <li>You can delete all data from the extension dashboard at any time.</li>
+                <li>We have no analytics, no tracking, and no third-party data sharing.</li>
+            </ul>
+        </div>
+
+        <!-- 1. Overview -->
+        <div class="policy-section">
+            <h2><span class="section-num">1</span> Overview</h2>
+            <p>This Privacy Policy describes how <strong>Hoops</strong> ("we", "us", or "our") handles information when you use our Chrome Extension. Hoops is a browser extension that helps job seekers extract mandatory questions from job application pages, parse resume files, track job applications, and copy job descriptions.</p>
+            <p><strong>We do not operate any servers. We do not transmit your personal data anywhere. All functionality runs entirely within your local browser environment.</strong></p>
+        </div>
+
+        <!-- 2. Data We Store Locally -->
+        <div class="policy-section">
+            <h2><span class="section-num">2</span> Data Stored Locally on Your Device</h2>
+            <p>Hoops uses Chrome's <code>chrome.storage.local</code> API to store the following data <strong>exclusively on your device</strong>. This data never leaves your browser.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>What It Contains</th>
+                        <th>Why It's Stored</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Resume Context</td>
+                        <td>Text extracted from your uploaded PDF/DOCX, or text you manually paste. If "Remove PII" is enabled, emails, phone numbers, addresses, and social links are stripped before storage.</td>
+                        <td>To inject into question prompts and track which resume was used per application.</td>
+                    </tr>
+                    <tr>
+                        <td>Saved Jobs</td>
+                        <td>Job URL, company name, role title, date saved, job description (if copied), and resume text snippet used at the time of saving.</td>
+                        <td>To power the Job Tracker dashboard and let you review your application history.</td>
+                    </tr>
+                    <tr>
+                        <td>Extension Settings</td>
+                        <td>User preferences: auto-capture resume toggle, PII removal toggle, auto-save on submit toggle.</td>
+                        <td>To persist your preferences between browser sessions.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 20px;">You can permanently delete all locally stored data at any time by clicking <strong>"Delete All Data"</strong> in the Privacy Settings section of the extension dashboard.</p>
+        </div>
+
+        <!-- 3. Resume Parsing & PII Removal -->
+        <div class="policy-section">
+            <h2><span class="section-num">3</span> Resume Parsing &amp; PII Removal</h2>
+            <p>When you upload a resume file (PDF or DOCX), Hoops processes it entirely within your browser using the open-source <strong>PDF.js</strong> and <strong>Mammoth.js</strong> libraries. At no point is your file, or any extracted text, sent to an external server or API.</p>
+            <p>If you enable the <strong>"Remove PII Before Storage"</strong> setting, Hoops will automatically detect and remove the following categories of personally identifiable information from the extracted text before it is stored:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; padding-left: 4px;">
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #10b981;">✓</span> Email addresses</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #10b981;">✓</span> Phone numbers</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #10b981;">✓</span> Physical addresses</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #10b981;">✓</span> LinkedIn, GitHub, and other social profile URLs</li>
+            </ul>
+            <p>Your original resume file is <strong>never read again after the initial extraction</strong> and is not stored anywhere by the extension.</p>
+        </div>
+
+        <!-- 4. Permissions -->
+        <div class="policy-section">
+            <h2><span class="section-num">4</span> Permissions &amp; Why We Need Them</h2>
+            <p>Hoops requests the following Chrome permissions. Each is required for core functionality and is used for no other purpose.</p>
+
+            <div style="margin-top: 20px;">
+                <div class="perm-item">
+                    <span class="perm-name">storage</span>
+                    <p class="perm-desc">Required to persist your resume context, saved jobs, and privacy settings in Chrome's local storage on your device.</p>
+                </div>
+                <div class="perm-item">
+                    <span class="perm-name">clipboardWrite</span>
+                    <p class="perm-desc">Required to let you copy extracted questions, job descriptions, and resume text to your clipboard with one click.</p>
+                </div>
+                <div class="perm-item">
+                    <span class="perm-name">&lt;all_urls&gt;</span>
+                    <p class="perm-desc">Required because job applications are hosted across thousands of unique domains and company-specific subdomains (e.g., <em>jobs.lever.co/company</em>, <em>company.greenhouse.io</em>, <em>apply.workable.com/company</em>). Hoops must be able to run its content scripts on any job application page the user visits to detect forms, extract questions, and intercept resume uploads. The extension only activates its UI when it detects a supported ATS form — it does not read, store, or transmit content from any other pages.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Data We Do NOT Collect -->
+        <div class="policy-section">
+            <h2><span class="section-num">5</span> Data We Do NOT Collect</h2>
+            <p>To be explicit, Hoops does <strong>not</strong> collect, transmit, sell, or share any of the following:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; padding-left: 4px;">
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #ef4444;">✕</span> Your name, email, or any account information (we have no accounts)</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #ef4444;">✕</span> Browsing history or page content from non-job-application pages</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #ef4444;">✕</span> Analytics, crash reports, or telemetry of any kind</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #ef4444;">✕</span> Your resume contents (they never leave your device)</li>
+                <li style="color: var(--text-muted); font-size: 15px; display: flex; gap: 10px;"><span style="color: #ef4444;">✕</span> Cookies or cross-site tracking identifiers</li>
+            </ul>
+        </div>
+
+        <!-- 6. Third-Party Services -->
+        <div class="policy-section">
+            <h2><span class="section-num">6</span> Third-Party Services</h2>
+            <p>Hoops does not use any third-party analytics, crash reporting, or tracking SDKs.</p>
+            <p>The extension dashboard contains an optional link to <strong>Ko-fi</strong> for voluntary donations to support development. Clicking this link takes you to Ko-fi's website, which is governed by Ko-fi's own privacy policy. Hoops has no visibility into whether or how you interact with Ko-fi.</p>
+            <p>Hoops fetches job description data via <strong>publicly accessible ATS APIs</strong> (e.g., the Lever public job API). These requests retrieve only public job listing information using the URL you are already visiting. No personal data is included in these requests.</p>
+        </div>
+
+        <!-- 7. GDPR & CCPA -->
+        <div class="policy-section">
+            <h2><span class="section-num">7</span> GDPR &amp; CCPA Compliance</h2>
+            <p>Because Hoops does not collect, process, or transmit any personal data to external systems, it operates in a manner that is inherently consistent with GDPR (EU) and CCPA (California) requirements.</p>
+            <p><strong>Right to deletion:</strong> You can delete all data stored by Hoops at any time using the "Delete All Data" button in the extension settings. This clears all <code>chrome.storage.local</code> data associated with the extension.</p>
+            <p><strong>Right to export:</strong> You can export all your stored data using the "Export Data" button in the extension settings.</p>
+            <p><strong>Data portability:</strong> All data is stored in standard JSON format in Chrome's local storage and is fully portable.</p>
+        </div>
+
+        <!-- 8. Security -->
+        <div class="policy-section">
+            <h2><span class="section-num">8</span> Security</h2>
+            <p>Hoops v2.0 was subject to a full security audit. Key measures implemented include:</p>
+            <p>• All user-supplied content is sanitized using strict regex-based HTML escaping before being rendered in the UI to prevent Cross-Site Scripting (XSS) attacks.</p>
+            <p>• All URLs rendered in the dashboard are validated to use only <code>http:</code> or <code>https:</code> protocols, preventing <code>javascript:</code> URI injection attacks.</p>
+            <p>• HTML entities in stored text are decoded using a safe <code>DOMParser</code> approach that does not execute embedded scripts.</p>
+            <p>• A strict Content Security Policy (CSP) is enforced on all extension pages: <code>script-src 'self'; object-src 'self'</code>.</p>
+        </div>
+
+        <!-- 9. Changes -->
+        <div class="policy-section">
+            <h2><span class="section-num">9</span> Changes to This Policy</h2>
+            <p>We may update this Privacy Policy when the extension gains new features that change how data is handled. The "Last updated" date at the top of this page will always reflect the most recent revision. For significant changes, we will note them in the extension's changelog.</p>
+        </div>
+
+        <!-- 10. Contact -->
+        <div class="policy-section">
+            <h2><span class="section-num">10</span> Contact</h2>
+            <p>If you have any questions about this Privacy Policy or Hoops' data practices, please reach out via the <strong>Chrome Web Store support page</strong> for the Hoops extension.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Hoops v2.0 &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; Privacy Policy</p>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            toggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+            localStorage.setItem('hoops-theme', theme);
+        }
+        const saved = localStorage.getItem('hoops-theme') || 'dark';
+        applyTheme(saved);
+        toggle.addEventListener('click', () => {
+            applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+
+</body>
+</html>
